@@ -1,0 +1,21 @@
+body{
+    font-family: poppins;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+*::selection{
+    background: #333;
+    color: #fff;
+}
+:is(#quran-body,#surah-list-body){
+    max-height: 650px;
+    overflow-y: scroll;
+}
+:is(#quran-body,#surah-list-body)::-webkit-scrollbar{
+    width: 1px;
+    background: #eee;
+}
+:is(#quran-body,#surah-list-body)::-webkit-scrollbar-thumb{
+    background: rgb(58, 57, 57);
+}`
