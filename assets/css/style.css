@@ -9,8 +9,9 @@ body{
     color: #fff;
 }
 :is(#quran-body,#surah-list-body){
-    max-height: 650px;
+    height: 650px;
     overflow-y: scroll;
+   
 }
 :is(#quran-body,#surah-list-body)::-webkit-scrollbar{
     width: 1px;
@@ -18,4 +19,29 @@ body{
 }
 :is(#quran-body,#surah-list-body)::-webkit-scrollbar-thumb{
     background: rgb(58, 57, 57);
+}
+#preloader{
+    display: none;
+}
+.active-list{
+    background: #333;
+    color: #fff;
+}
+.disabled-ayat{
+    pointer-events: none;
+    opacity: 0.8;
+}
+.active-ayat{
+    background: #333;
+    color: #fff;
+    pointer-events: all;
+    opacity: 1;
+}
+.active-ayat .info li{
+    background: #fff !important;
+    color: #333;
+}
+.active-ayat *::selection{
+    background: white;
+    color: #333;
 }
