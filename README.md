@@ -21,6 +21,6 @@ and many more....
 # Live Link in about
 
 # Demo Preview this project 
-![imageScreenshot](./preview.gif)
+![imageScreenshot](./preview.png)
 
 > Thanks for reach out me on github
