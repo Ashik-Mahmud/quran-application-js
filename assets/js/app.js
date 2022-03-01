@@ -111,6 +111,7 @@ const displaySingleSurah = (surah) => {
                                                 <li class="small mx-2 badge bg-dark">Sajda: ${sajda ? 'Yes' : 'No'}</li>
                                                 <li class="small mx-2 badge bg-dark">Manzil: ${manzil}</li>
                                                 <li class="small mx-2 badge bg-dark">HizbQuarter: ${hizbQuarter}</li>
+                                                <li class="small mx-2 badge bg-dark">Juz: ${juz}</li>
                                             </ul>
                                         </div>
                                     </li>`;
@@ -125,16 +126,16 @@ const displaySingleSurah = (surah) => {
 const playAyat = (target, audio) => {
     const audioElement = document.getElementById("audio");
     const surahList = document.getElementsByClassName('ayat-item');
-
+    audioElement.classList.add('playing');
+    audioElement.src = audio;
+    audioElement.classList.contains('playing') ? audioElement.play() : '';
     audioElement.onplaying = () => {
         target.classList.remove('bi-play-circle-fill')
         target.classList.add('text-white', 'bi-pause-circle-fill')
         target.parentElement.parentElement.classList.add('active-ayat');
         /* active list color  */
         for (let list of surahList) list.classList.add('disabled-ayat');
-        
     }
-
     audioElement.onended = () => {
         target.classList.remove('text-white', 'bi-pause-circle-fill')
         target.classList.add('bi-play-circle-fill')
@@ -142,8 +143,7 @@ const playAyat = (target, audio) => {
         for (let list of surahList) list.classList.remove('disabled-ayat');
     }
 
-    audioElement.src = audio;
-    audioElement.play();
+
 }
 
 /* calling additional function here  */
